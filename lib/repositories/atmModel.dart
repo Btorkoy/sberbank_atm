@@ -8,8 +8,8 @@ class Atm {
   final String house;     
   final String building;  
   final String buildingNum; 
-  final String latitude;    
-  final String longitude;   
+  final double latitude;    
+  final double longitude;   
   final String place;     
   final String operatingMode;
   final String type;     
@@ -37,8 +37,8 @@ class Atm {
       house         : element[  "Номер дома"],      
       building      : element[  "Строение"],   
       buildingNum   : element[  "Номер строения"],  
-      latitude      : element[  "lat"],     
-      longitude     : element[  "long"],    
+      latitude      : double.parse(element[  "lat"]),     
+      longitude     : double.parse(element[  "long"]),    
       place         : element[  "Подробное место установки"],      
       operatingMode : element[  "Режим работы"], 
       type          : element[  "Тип УС"],      
