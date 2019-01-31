@@ -23,6 +23,8 @@ dependencies:
     git:
       url: git://github.com/flutter/plugins
       path: packages/google_maps_flutter
+  firebase_core: ^0.3.0
+  firebase_database: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -46,6 +48,7 @@ flutter:
   #  - images/a_dot_ham.jpeg
   assets:
     - assets/jsonResponces/RF_regions.json
+    - assets/atmList.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
 
