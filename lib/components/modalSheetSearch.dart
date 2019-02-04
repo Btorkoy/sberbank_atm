@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import '../repositories/atmProvider.dart';
 
 class ModalSheet extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    var x = AtmProvider().getAllAtmList().then((onValue){
-      var k  =onValue ;
-    });
     return Container(
       margin: EdgeInsets.all(20),
       height: 300,
