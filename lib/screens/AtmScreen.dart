@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import '../repositories/atm_model.dart';
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart';
+import 'adv_booking_screen.dart';
 
-class AtmScreen extends StatefulWidget {
+class AtmScreen extends StatelessWidget {
   final Atm atm;
   static const String ROUTE = '/atmpage';
 
   AtmScreen({Key key, this.atm}) : super(key: key);
 
-  @override
-  State<StatefulWidget> createState() => AtmScreenState(atm: this.atm);
-}
-
-class AtmScreenState extends State<AtmScreen> {
-  Atm atm;
-  AtmScreenState({this.atm});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +23,9 @@ class AtmScreenState extends State<AtmScreen> {
             child: Text('Разместить рекламу'),
             textColor: Colors.white,
             color: Colors.green,
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => AdvPostingScreen()));
+            },
           )
         ])
     );
@@ -43,7 +39,6 @@ class Calendar extends StatefulWidget {
 
 class CalendarState extends State<Calendar> {
   DateTime _rangeBegin;
-  DateTime _rangeEnd;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +52,6 @@ class CalendarState extends State<Calendar> {
         this.setState(() {
           if(_rangeBegin == null || date.isBefore(_rangeBegin)) _rangeBegin = date;
           else if(date.isAtSameMomentAs(_rangeBegin)) _rangeBegin = null;
-          else _rangeEnd = date;
         });
       },
       thisMonthDayBorderColor: Colors.grey,

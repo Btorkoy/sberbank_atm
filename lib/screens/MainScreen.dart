@@ -101,6 +101,7 @@ class MainScreenState extends State<MainScreen> {
     setState(() {
       if (_isLoading) return;
       var atmsAround = _atmProvider.getAtmsAround(_position.target.latitude, _position.target.longitude, radius);
+      print(functionTitle + 'find ${atmsAround.length} atms');
       for (var atm in atmsAround) {
         _isLoading = true;
         mapController
