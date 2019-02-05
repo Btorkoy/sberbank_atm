@@ -20,7 +20,7 @@ class AtmProvider {
   }
 
   Atm getAtmByMarkerID(String markerId) {
-    return _allAtms.where((atm) => atm.marker.id == markerId).first;
+    return _allAtms.where((atm) => atm.marker?.id == markerId).first;
   }
 
   List<Atm> findAtmsByCoordinates(double lat, double long) {
