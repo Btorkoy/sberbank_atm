@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../repositories/districtModel.dart';
+import '../../repositories/district_model.dart';
 
 class CityPage extends StatelessWidget {
   final List<City> city;

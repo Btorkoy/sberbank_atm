@@ -1,3 +1,5 @@
+import 'package:google_maps_flutter/google_maps_flutter.dart' show Marker;
+
 class Atm {
   final String id;      
   final String settlmentType; 
@@ -25,6 +27,9 @@ class Atm {
   final String region;    
   final String ownIncassation;
   final String lov; 
+  Marker marker;
+
+  String get address => '$street, $house, $building';
 
   factory Atm.fromJson(Map <dynamic, dynamic> element){
     return Atm(

@@ -1,5 +1,5 @@
-import 'regionModel.dart';
-import 'districtModel.dart';
+import 'region_model.dart';
+import 'district_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 import 'dart:async';

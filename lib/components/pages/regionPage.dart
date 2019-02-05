@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../repositories/regionModel.dart';
+import '../../repositories/region_model.dart';
 
 class RegionPage extends StatelessWidget {
   final List<Region> region;

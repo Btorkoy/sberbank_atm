@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import '../components/pages/map_page.dart';
-import '../repositories/regionModel.dart';
-import '../repositories/districtModel.dart';
+import '../repositories/region_model.dart';
+import '../repositories/district_model.dart';
 import '../components/pages/regionPage.dart';
 import '../components/pages/districtPage.dart';
 import '../components/pages/cityPage.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import '../repositories/geoAPI.dart' show GeoApi;
+import '../repositories/geo_api.dart' show GeoApi;
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title, this.mapController}) : super(key: key);
