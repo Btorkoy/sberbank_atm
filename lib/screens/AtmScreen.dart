@@ -12,29 +12,34 @@ class AtmScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( title: Text('Банкомат'), backgroundColor: Colors.green,),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text(
-            '${atm.address}',
-            style: Theme.of(context).textTheme.display1),
+      appBar: AppBar(
+        title: Text('Банкомат'),
+        backgroundColor: Colors.green,
+      ),
+      drawer: Drawer(
+        semanticLabel: 'label',
+      ),
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <Widget>[
+          Center(child: Text('${atm.address}', style: Theme.of(context).textTheme.display1)),
           RaisedButton(
             child: Text('Разместить рекламу'),
             textColor: Colors.white,
             color: Colors.green,
-            onPressed: (){
+            onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => AdvPostingScreen()));
             },
-          )
-        ])
+          ),
+        ]),
+      ),
     );
   }
 }
 
 class Calendar extends StatefulWidget {
   @override
-  State<StatefulWidget> createState () => CalendarState();
+  State<StatefulWidget> createState() => CalendarState();
 }
 
 class CalendarState extends State<Calendar> {
@@ -43,21 +48,22 @@ class CalendarState extends State<Calendar> {
   @override
   Widget build(BuildContext context) {
     var color = Theme.of(context).accentColor;
-    return  Container(
-    margin: EdgeInsets.symmetric(horizontal: 16.0),
-    child: CalendarCarousel(
-      locale: 'ru',
-      weekdayTextStyle: TextStyle(color: color ),
-      onDayPressed: (DateTime date, _) {
-        this.setState(() {
-          if(_rangeBegin == null || date.isBefore(_rangeBegin)) _rangeBegin = date;
-          else if(date.isAtSameMomentAs(_rangeBegin)) _rangeBegin = null;
-        });
-      },
-      thisMonthDayBorderColor: Colors.grey,
-      height: 420.0,
-      selectedDateTime: DateTime.now(),
-    ),
-  );
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 16.0),
+      child: CalendarCarousel(
+        locale: 'ru',
+        weekdayTextStyle: TextStyle(color: color),
+        onDayPressed: (DateTime date, _) {
+          this.setState(() {
+            if (_rangeBegin == null || date.isBefore(_rangeBegin))
+              _rangeBegin = date;
+            else if (date.isAtSameMomentAs(_rangeBegin)) _rangeBegin = null;
+          });
+        },
+        thisMonthDayBorderColor: Colors.grey,
+        height: 420.0,
+        selectedDateTime: DateTime.now(),
+      ),
+    );
   }
 }

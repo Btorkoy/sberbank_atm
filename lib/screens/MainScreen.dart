@@ -28,13 +28,16 @@ class MainScreenState extends State<MainScreen> {
     });
   }
 
+	GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: Drawer(),
       body: FractionallySizedBox(
         child: Stack(
-          alignment: Alignment.bottomLeft,
-          children: <Widget>[
+          alignment: Alignment.topLeft,
+          children: <Widget>[   
             GoogleMap(
               myLocationEnabled: true,
               trackCameraPosition: true,
@@ -42,7 +45,17 @@ class MainScreenState extends State<MainScreen> {
               initialCameraPosition: _position,
               compassEnabled: true,
             ),
-            Card(
+            Padding(
+              padding: EdgeInsets.only(top:35, left: 10),
+              child:GestureDetector(
+                child: Icon(Icons.dehaze, color: Colors.grey[600],),
+                onTap: (){
+                  _scaffoldKey.currentState.openDrawer();
+                },
+              )),
+            Align(
+              alignment: Alignment.bottomLeft,
+            child: Card(
               elevation: 8,
               margin: EdgeInsets.all(20),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
@@ -60,7 +73,7 @@ class MainScreenState extends State<MainScreen> {
                         size: 22,
                       ),
                       Text('Поиск', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500, fontSize: 18)),
-                    ])))))
+                    ]))))))
       ],
     )));
   }
@@ -118,6 +131,6 @@ class MainScreenState extends State<MainScreen> {
         });
         print(functionTitle + 'set marker for atm ${atm.latitude}, ${atm.longitude} ');
       }
-    });
+    });  
   }
 }
