@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'advSendedToApproveScreen.dart';
-
-import 'package:file_picker/file_picker.dart';
+import '../components/drawer.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:flutter/services.dart';
+import 'dart:io';
 
 class AdvPostingScreen extends StatefulWidget {
   static const ROUTE = 'advPosting';
@@ -24,6 +26,7 @@ class AdvPostingScreenState extends State<AdvPostingScreen> {
               title: Text('Размещение рекламы'),
               backgroundColor: Colors.green,
             ),
+            drawer: MyDrawer(),
             body: Container(
               alignment: Alignment.topCenter,
               padding: EdgeInsets.all(10),
@@ -111,7 +114,7 @@ class AdvPostingScreenState extends State<AdvPostingScreen> {
                         children: <Widget>[
                           RaisedButton(
                             onPressed: getFilePath,
-                            child: new Icon(Icons.sd_storage),
+                            child: new Icon(Icons.attach_file),
                           ),
                           Text(this._filePath)
                         ],
@@ -142,13 +145,13 @@ class AdvPostingScreenState extends State<AdvPostingScreen> {
   var _filePath = '';
   void getFilePath() async {
     try {
-      String filePath = await FilePicker.getFilePath(type: FileType.ANY);
-      if (filePath == '') {
+      File file = await ImagePicker.pickImage(source: ImageSource.gallery);
+      if (file == null) {
         return;
       }
-      print("File path: " + filePath);
+      print("File path: " + file.uri.toString());
       setState(() {
-        this._filePath = filePath.split('/').last;
+        this._filePath = file.uri.toString().split('/').last;
       });
     } on Exception catch (e) {
       print("Error while picking the file: " + e.toString());

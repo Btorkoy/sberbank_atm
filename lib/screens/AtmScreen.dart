@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../repositories/atm_model.dart';
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart';
 import 'adv_booking_screen.dart';
+import '../components/drawer.dart';
 
 class AtmScreen extends StatelessWidget {
   final Atm atm;
@@ -16,9 +17,7 @@ class AtmScreen extends StatelessWidget {
         title: Text('Банкомат'),
         backgroundColor: Colors.green,
       ),
-      drawer: Drawer(
-        semanticLabel: 'label',
-      ),
+      drawer: MyDrawer(),
       body: Container(
         padding: EdgeInsets.all(20),
         child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <Widget>[

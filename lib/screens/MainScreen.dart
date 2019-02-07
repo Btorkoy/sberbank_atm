@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../components/modalSheetSearch.dart';
+import '../components/drawer.dart';
 import '../repositories/atm_provider.dart';
 import 'AtmScreen.dart';
 
@@ -33,7 +34,7 @@ class MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: Drawer(),
+      drawer: MyDrawer(),
       body: FractionallySizedBox(
         child: Stack(
           alignment: Alignment.topLeft,
