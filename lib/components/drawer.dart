@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import '../screens/my_books_screen.dart';
+import '../screens/my_account_screen.dart';
+import '../screens/my_content_screen.dart';
+import '../screens/my_personal_data_screen.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -50,7 +54,9 @@ class MyDrawer extends StatelessWidget {
                     color: Colors.black,
                   ),
                   title: Text('Персональные данные'),
-                  onTap: null,
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> MyPersonalDataScreen()));
+                  },
                 ),
                 ListTile(
                   leading: Icon(
@@ -58,7 +64,9 @@ class MyDrawer extends StatelessWidget {
                     color: Colors.black,
                   ),
                   title: Text('Мои заказы'),
-                  onTap: null,
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> MyAdvCampanyScreen()));
+                  },
                 ),
                 ListTile(
                   leading: Icon(
@@ -66,7 +74,9 @@ class MyDrawer extends StatelessWidget {
                     color: Colors.black,
                   ),
                   title: Text('Мой счет'),
-                  onTap: null,
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> MyAccountScreen()));
+                  },
                 ),
                 ListTile(
                   leading: Icon(
@@ -74,7 +84,9 @@ class MyDrawer extends StatelessWidget {
                     color: Colors.black,
                   ),
                   title: Text('Мои файлы'),
-                  onTap: null,
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> MyContentScreen()));
+                  },
                 ),
                 ListTile(
                   leading: Icon(
@@ -82,7 +94,9 @@ class MyDrawer extends StatelessWidget {
                     color: Colors.black,
                   ),
                   title: Text('Выйти'),
-                  onTap: null,
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> MyAdvCampanyScreen()));
+                  },
                 ),
               ],
             ),
