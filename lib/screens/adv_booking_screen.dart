@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'advSendedToApproveScreen.dart';
+import 'adv_sended_to_approve_screen.dart';
 import '../components/drawer.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/services.dart';

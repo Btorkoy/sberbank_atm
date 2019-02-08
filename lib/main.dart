@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sberbank/screens/MainScreen.dart';
-import 'screens/AtmScreen.dart';
+import 'package:sberbank/screens/main_screen.dart';
+import 'screens/atm_screen.dart';
 import 'screens/adv_booking_screen.dart';
 
 void main() => runApp(new MyApp());

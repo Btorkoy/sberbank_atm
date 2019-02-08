@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'MainScreen.dart';
+import 'main_screen.dart';
 
 class AdvToApproveScreen extends StatelessWidget {
   static const ROUTE = 'advtoapprove';

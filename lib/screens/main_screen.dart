@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import '../components/modalSheetSearch.dart';
+import '../components/modal_sheet_search.dart';
 import '../components/drawer.dart';
 import '../repositories/atm_provider.dart';
-import 'AtmScreen.dart';
+import 'atm_screen.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen() : super();
